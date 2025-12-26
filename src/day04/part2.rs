@@ -72,7 +72,7 @@ impl Matrix {
             return None
         };
 
-        self.get_data().get(row * self.get_nrow() + col)
+        self.get_data().get(row * self.get_ncol() + col)
     }
 
     fn sum_surrounding_elements(&self, row: usize, col: usize) -> usize {
