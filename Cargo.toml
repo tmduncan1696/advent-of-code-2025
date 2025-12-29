@@ -10,3 +10,4 @@ path = "src/lib.rs"
 [dependencies]
 clap = { version = "4.5.53", features = ["derive"] }
 fancy-regex = "0.17.0"
+rangemap = "1.7.1"
