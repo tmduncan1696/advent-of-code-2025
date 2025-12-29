@@ -8,7 +8,7 @@ pub fn solve(input: &Input) -> Option<usize> {
 mod test {
     use super::*;
 
-    use crate::day04::input::read;
+    use crate::day00::input::read;
 
     #[test]
     fn test_solve() {
