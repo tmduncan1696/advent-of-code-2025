@@ -1,4 +1,4 @@
-const MAX_DAY: u8 = 5;
+const MAX_DAY: u8 = 6;
 
 pub mod args;
 use crate::args::Args;
@@ -8,7 +8,7 @@ pub mod day02;
 pub mod day03;
 pub mod day04;
 pub mod day05;
-// pub mod day06;
+pub mod day06;
 // pub mod day07;
 // pub mod day08;
 // pub mod day09;
@@ -55,7 +55,7 @@ fn run_day(day: u8) -> RunResult {
         3 => day03::run,
         4 => day04::run,
         5 => day05::run,
-        // 6 => day06::run,
+        6 => day06::run,
         // 7 => day07::run,
         // 8 => day08::run,
         // 9 => day09::run,
