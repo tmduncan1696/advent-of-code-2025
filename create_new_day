@@ -39,7 +39,7 @@ main() {
 		esac
 	done
 
-	local day=$(printf '%02d' "day$1")
+	local day=$(printf 'day%02d' $1)
 
 	cp -r src/day00/. src/$day
 
