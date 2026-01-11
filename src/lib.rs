@@ -1,4 +1,4 @@
-const MAX_DAY: u8 = 6;
+const MAX_DAY: u8 = 8;
 
 pub mod args;
 use crate::args::Args;
@@ -9,8 +9,8 @@ pub mod day03;
 pub mod day04;
 pub mod day05;
 pub mod day06;
-// pub mod day07;
-// pub mod day08;
+pub mod day07;
+pub mod day08;
 // pub mod day09;
 // pub mod day10;
 // pub mod day11;
@@ -56,13 +56,13 @@ fn run_day(day: u8) -> RunResult {
         4 => day04::run,
         5 => day05::run,
         6 => day06::run,
-        // 7 => day07::run,
-        // 8 => day08::run,
+        7 => day07::run,
+        8 => day08::run,
         // 9 => day09::run,
         // 10 => day10::run,
         // 11 => day11::run,
         // 12 => day12::run,
-        _ => panic!("There is no day {day} in Advent of Code")
+        _ => panic!("There is no day {day} in Advent of Code 2025")
     };
 
     let (answer1, answer2) = run();
