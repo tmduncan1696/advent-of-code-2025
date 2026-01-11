@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# 
+# Creates a new folder for AoC Day day
+#
+# Usage:
+# create_new_day day [-h]
+#
+# Arguments:
+# day	day number to create
+#
+# Options:
+# -h	Help
+
+usage() {
+	echo "create_new_day day [-h]"
+}
+
+help() {
+	usage
+	echo
+	echo "Arguments:"
+	echo "day	day number to create"
+	echo
+	echo "Options:"
+	echo "-h	Help"
+}
+
+main() {
+
+	while getopts ':h' opt; do
+		case "$opt" in
+			h) # display help
+				help
+				exit;;
+			/?) # invalid option
+				echo "Invalid option" >&2
+				usage
+				exit;;
+		esac
+	done
+
+	local day=$(printf '%02d' "day$1")
+
+	cp -r src/day00/. src/$day
+
+	for file in "src/$day"/*; do
+		sed -i -e "s/day00/$day/g" $file
+	done
+}
+
+main "$@"

@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+source .env
+
+help() {
+	echo "Get input data from Advent of Code"
+	echo "DO NOT RUN IN LOOP; ONLY RUN ONCE"
+	echo
+	echo "Usage: get_input_data y d [-h] [-s]"
+	echo "Arguments:"
+	echo "y	year"
+	echo "d	day"
+	echo
+}
+
+session() {
+	echo "Session ID: $SESSION"
+}
+
+main() {
+	local year=$1
+	local day=$2
+
+	while getopts ":hs" opt; do
+		case "$opt" in 
+			h) # display help
+				help
+				exit;;
+			s) # display session ID
+				session
+				exit;;
+			/?) # invalid option
+				echo "Error: Invalid option" >&2
+				exit;;
+		esac
+	done
+
+	curl https://adventofcode.com/$year/day/$day/input --cookie "session=$SESSION" > src/input/day"$(printf '%02d' $day)".txt
+}
+
+main "$@"
